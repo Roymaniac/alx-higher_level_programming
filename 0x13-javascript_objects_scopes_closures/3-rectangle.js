@@ -10,5 +10,4 @@ class Rectangle {
     console.log(("X".repeat(this.width) + "\n").repeat(this.height));
   }
 }
-
 module.exports = Rectangle;
