@@ -1,14 +1,5 @@
 #!/usr/bin/node
-const fs = require("fs");
-
-const fileA = fs.readFileSync(process.argv[2], "utf-8", (err) => {
-  if (err) throw err;
-});
-const fileB = fs.readFileSync(process.argv[3], "utf-8", (err) => {
-  if (err) throw err;
-});
-
-const combinedFile = `${fileA} ${fileB}`;
-fs.writeFile(process.argv[4], combinedFile, "utf-8", (err) => {
-  if (err) throw err;
-});
+const fs = require('fs');
+const a = fs.readFileSync(process.argv[2], 'utf8');
+const b = fs.readFileSync(process.argv[3], 'utf8');
+fs.writeFileSync(process.argv[4], a + b);

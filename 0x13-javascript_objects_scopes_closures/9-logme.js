@@ -1,7 +1,8 @@
 #!/usr/bin/node
-const log = console.log
-let args = 0
-exports.logMe = function(item){
-    log(`${args}: ${item}`)
-    args++
-}
+exports.logMe = function (item) {
+  if (typeof (this.counter) === 'undefined') {
+    this.counter = 0;
+  }
+  console.log(this.counter + ': ' + item);
+  this.counter++;
+};

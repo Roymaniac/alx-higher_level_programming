@@ -1,10 +1,9 @@
 #!/usr/bin/node
-const { dict } = require("./101-data")
-const log = console.log
+const dict = require('./101-data').dict;
+const newDict = {};
 
-const sorted = Object.entries(dict).reduce((accumulator, [key, value]) => {
-    accumulator[value] = accumulator[value] ?  [...accumulator[value], key]: [key ]
-    return accumulator
-},{})
-
-log(sorted)
+for (const item in dict) {
+  if (!(dict[item] in newDict)) newDict[dict[item]] = [];
+  newDict[dict[item]].push(item);
+}
+console.log(newDict);
