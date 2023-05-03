@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const request = require("request");
+const request = require('request');
 
 request(process.argv[2], function (error, response, body) {
   if (error) {
@@ -8,7 +8,7 @@ request(process.argv[2], function (error, response, body) {
   }
   const nb = JSON.parse(body).results.filter((elem) => {
     return elem.characters.filter((url) => {
-      return url.includes("18");
+      return url.includes('18');
     }).length;
   }).length;
   console.log(nb);
